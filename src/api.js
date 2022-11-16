@@ -5,7 +5,7 @@ const app = fastify();
 
 app.register(function (app, _, done) {
   app.get("/", async (request, reply) => {
-    return { hello: 'world' }
+    return { hello: process.env.DB_USER }
   });
   done();
 }, { prefix: "/.netlify/functions/api" });
